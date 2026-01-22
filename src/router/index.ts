@@ -11,15 +11,10 @@ const router = createRouter({
     { path: "/article/:id", component: Detail, name: "Detail" },
     { path: "/about", component: About },
 
-    { path: "/404", component: NotFound },
-    { path: "/:pathMatch(.*)*", redirect: "/404" },
+    { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
   ],
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition;
-    } else {
-      return { top: 0, behavior: "instant" };
-    }
+  scrollBehavior() {
+    return { top: 0 };
   },
 });
 
