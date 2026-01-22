@@ -2,11 +2,25 @@ import imageMie from "@/assets/images/mie instan.jpeg";
 import ArticleMie from "@/components/articles/ArticleMie.vue";
 import imageTenun from "@/assets/images/tenun.jpeg";
 import ArticleTenun from "@/components/articles/ArticleTenun.vue";
+import imageKomputer from "@/assets/images/komputer.png";
+import ArticleInternet from "@/components/articles/ArticleInternet.vue";
+
 import { markRaw } from "vue";
 
 export const articles = [
   {
     id: 1,
+    title: "Internet",
+    category: "Teknologi",
+    component: markRaw(ArticleInternet),
+    content:
+      "Ini adalah materi presentasi yang dibuat oleh kami terkait dengan sejarah internet dan perkembangannya hingga saat ini.",
+    author: "Kelompok 1",
+    image: imageKomputer,
+    date: "19 Januari 2026",
+  },
+  {
+    id: 2,
     title:
       "Tenun Suku Sasak: Makna Filosofis dan Upaya Pelestarian di Tengah Modernisasi",
     category: "Budaya",
@@ -18,7 +32,7 @@ export const articles = [
     date: "20 Januari 2026",
   },
   {
-    id: 2,
+    id: 3,
     title:
       "Mie Instan: Solusi Lapar, Komfort dalam Kemasan, dan Dinamika Rasanya yang Tak Terlupakan",
     category: "Kuliner",
