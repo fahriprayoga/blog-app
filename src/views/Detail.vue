@@ -1,18 +1,27 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRoute } from "vue-router";
+import { computed } from "vue";
+import { getArticleById } from "@/data/articles";
+
+const route = useRoute();
+const article = computed(() => {
+  return getArticleById(route.params.id as string);
+});
+</script>
 
 <template>
   <div class="md:px-24 lg:px-40 mt-12">
     <div
       class="bg-slate-950 rounded-full text-slate-100 px-2.5 py-1 text-sm md:text-xs lg:text-sm tracking-wide w-fit"
     >
-      Teknologi
+      {{ article?.category }}
     </div>
     <h1 class="mt-8 text-4xl md:text-5xl font-semibold text-slate-950">
-      Building Scalable Web Applications
+      {{ article?.title }}
     </h1>
     <div class="w-full overflow-hidden rounded-lg mt-12">
       <img
-        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+        :src="article?.image"
         alt="Random image"
         class="block aspect-video object-cover w-full rounded-lg transition-all group-hover:scale-105 ease-in-out duration-500"
       />
@@ -30,5 +39,6 @@
       that can grow seamlessly, maintain reliability, and deliver consistent
       performance under varying loads.
     </p>
+    <component :is="article?.component" v-if="article?.component" />
   </div>
 </template>

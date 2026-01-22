@@ -1,18 +1,36 @@
+import imageMie from "@/assets/images/mie instan.jpeg";
+import ArticleMie from "@/components/articles/ArticleMie.vue";
+import imageTenun from "@/assets/images/tenun.jpeg";
+import ArticleTenun from "@/components/articles/ArticleTenun.vue";
+import { markRaw } from "vue";
+
 export const articles = [
   {
     id: 1,
-    title: "Belajar Vue Dasar",
-    category: "Teknologi",
-    content: "Ini adalah artikel tentang Vue.js",
-    author: "Fahri",
-    date: "2026-01-10",
+    title:
+      "Tenun Suku Sasak: Makna Filosofis dan Upaya Pelestarian di Tengah Modernisasi",
+    category: "Budaya",
+    component: markRaw(ArticleTenun),
+    content:
+      "Keindahan dan keunikan Tenun Sasak sebagai warisan budaya tak benda, khususnya tenun ikat yang terkenal seperti Songket dan Bebed (kain ikat)",
+    author: "Kelompok 1",
+    image: imageTenun,
+    date: "20 Januari 2026",
   },
   {
     id: 2,
-    title: "Vue Router",
-    category: "Teknologi",
-    content: "Routing di Vue menggunakan vue-router",
-    author: "Fahri",
-    date: "2026-01-11",
+    title:
+      "Mie Instan: Solusi Lapar, Komfort dalam Kemasan, dan Dinamika Rasanya yang Tak Terlupakan",
+    category: "Kuliner",
+    component: markRaw(ArticleMie),
+    content:
+      "Mie instan bukan hanya sebagai makanan, tetapi sebagai fenomena budaya, memori kolektif, dan penanda zaman",
+    author: "Kelompok 1",
+    image: imageMie,
+    date: "21 Januari 2026",
   },
 ];
+
+export const getArticleById = (id: string | number) => {
+  return articles.find((article) => article.id === Number(id));
+};

@@ -7,5 +7,5 @@ import ListArticle from "@/components/ListArticle.vue";
 <template>
   <TopArticle :articles="articles" />
   <h2 class="text-slate-950 text-2xl mt-12 font-medium">Artikel Lainnya</h2>
-  <ListArticle />
+  <ListArticle :articles="articles" />
 </template>
