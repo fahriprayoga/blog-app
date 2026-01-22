@@ -14,6 +14,13 @@ const router = createRouter({
     { path: "/404", component: NotFound },
     { path: "/:pathMatch(.*)*", redirect: "/404" },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0, behavior: "instant" };
+    }
+  },
 });
 
 export default router;

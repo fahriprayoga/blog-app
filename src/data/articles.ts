@@ -1,9 +1,13 @@
-import imageMie from "@/assets/images/mie instan.jpeg";
+import imageMie from "@/assets/images/articles/mie instan.jpeg";
 import ArticleMie from "@/components/articles/ArticleMie.vue";
-import imageTenun from "@/assets/images/tenun.jpeg";
+import imageTenun from "@/assets/images/articles/tenun.jpeg";
 import ArticleTenun from "@/components/articles/ArticleTenun.vue";
-import imageKomputer from "@/assets/images/komputer.png";
+import imageKomputer from "@/assets/images/articles/komputer.png";
 import ArticleInternet from "@/components/articles/ArticleInternet.vue";
+import imageAI from "@/assets/images/articles/ai.png";
+import ArticleAI from "@/components/articles/ArticleAI.vue";
+import imageLaravel from "@/assets/images/articles/laravel.png";
+import ArticleLaravel from "@/components/articles/ArticleLaravel.vue";
 
 import { markRaw } from "vue";
 
@@ -42,6 +46,28 @@ export const articles = [
     author: "Kelompok 1",
     image: imageMie,
     date: "21 Januari 2026",
+  },
+  {
+    id: 4,
+    title: "Artificial Intelligence: Menembus Batas Imajinasi Manusia",
+    category: "Teknologi",
+    component: markRaw(ArticleAI),
+    content:
+      "Menjelajahi bagaimana kecerdasan buatan berevolusi dari sekadar kode program menjadi mitra kreatif manusia di era digital.",
+    author: "Kelompok 1",
+    image: imageAI, // Pastikan sudah import gambar AI
+    date: "22 Januari 2026",
+  },
+  {
+    id: 5,
+    title: "Laravel: Seni Membangun Aplikasi Web Modern",
+    category: "Teknologi",
+    component: markRaw(ArticleLaravel),
+    content:
+      "Mengenal ekosistem Laravel yang elegan, produktif, dan bagaimana ia mengubah cara developer PHP membangun sistem yang kompleks.",
+    author: "Kelompok 1",
+    image: imageLaravel, // Ganti dengan path gambar Laravel Anda
+    date: "22 Januari 2026",
   },
 ];
 
